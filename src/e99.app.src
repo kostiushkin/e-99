@@ -1,0 +1,12 @@
+{application, e99,
+ [
+  {description, ""},
+  {vsn, "1"},
+  {registered, []},
+  {applications, [
+                  kernel,
+                  stdlib
+                 ]},
+  {mod, { e99_app, []}},
+  {env, []}
+ ]}.
