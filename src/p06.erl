@@ -4,4 +4,4 @@
 -export([is_palindrome/1]).
 
 is_palindrome(L) when is_list(L) ->
-    L =:= lists:reverse(L).
+    L =:= p05:reverse(L).
