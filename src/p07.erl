@@ -3,11 +3,14 @@
 
 -export([flatten/1]).
 
-flatten([[H|T1]|T2]) ->
-    flatten([H,T1|T2]);
-flatten([[]|T]) ->
-    flatten(T);
-flatten([H|T]) ->
-    [H|flatten(T)];
-flatten([]) ->
-    [].
+flatten(List) ->
+    p05:reverse(flatten(List, [])).
+
+flatten([H=[_|_]|T], FlatList) ->
+    flatten(T, flatten(H, FlatList));
+flatten([[]|T], FlatList) ->
+    flatten(T, FlatList);
+flatten([H|T], FlatList) ->
+    flatten(T, [H|FlatList]);
+flatten([], FlatList) ->
+    FlatList.

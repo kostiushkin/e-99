@@ -3,7 +3,7 @@
 
 -export([pack/1]).
 
-pack(L) when is_list(L) ->
+pack(L) ->
     pack(L, []).
 
 pack([H|T], [H2=[H|_]|T2]) ->
@@ -13,4 +13,4 @@ pack([H|T], L=[_|_]) ->
 pack([H|T], []) ->
     pack(T, [[H]]);
 pack([], L) ->
-    lists:reverse(L).
+    p05:reverse(L).

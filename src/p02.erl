@@ -5,5 +5,5 @@
 
 but_last ([_|T=[_,_|_]]) ->
     but_last(T);
-but_last(B = [_,_|[]]) ->
+but_last(B=[_,_]) ->
     B.

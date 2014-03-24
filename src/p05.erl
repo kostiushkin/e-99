@@ -3,7 +3,7 @@
 
 -export([reverse/1]).
 
-reverse(L) when is_list(L) ->
+reverse(L) ->
     reverse(L, []).
 
 reverse([H|T], L) ->

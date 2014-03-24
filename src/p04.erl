@@ -3,8 +3,10 @@
 
 -export([len/1]).
 
-len([_|T]) ->
-    1 + len(T);
-len([]) ->
-    0.
+len(List) ->
+    len(List, 0);
 
+len([_|T], Len) ->
+    len(T, Len+1);
+len([], Len) ->
+    Len.

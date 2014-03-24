@@ -3,9 +3,12 @@
 
 -export([compress/1]).
 
-compress([H,H|T]) ->
-    compress([H|T]);
-compress([H|T]) ->
-    [H|compress(T)];
-compress([]) ->
-    [].
+compress(List) ->
+    compress(List, []).
+
+compress([H|T], Acc=[H|_]) ->
+    compress(T, Acc);
+compress([H|T], Acc) ->
+    compress(T, [H|Acc]);
+compress([], Acc) ->
+    p05:reverse(Acc).

@@ -3,5 +3,5 @@
 
 -export([is_palindrome/1]).
 
-is_palindrome(L) when is_list(L) ->
+is_palindrome(L) ->
     L =:= p05:reverse(L).
